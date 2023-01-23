@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="Css/style.css">
+
+</head>
+
+<body>
+    <script src="javaScript/2.js">
+    </script>
+    <div class="main">
+        <h1>Learn JavaScript</h1>
+        <div class="subDiv">
+            <span id="one">
+                Saikat Bag
+            </span>
+            <br />
+            <p>
+                To day Date is:
+                <span id="printDate">
+                    Not avalebel
+                </span>
+                <br />
+                Current time is:
+                <span id="printTime">
+                    Not avalebel
+                </span>
+            </p>
+            <input type="button" value="click to Today Date" onclick="datefunction()"></input>
+            <input type="button" value="click to current time" onclick="timefunction()"></input>
+
+        </div>
+        <div class="calculator">
+            <script type="text/javascript">
+                function msg() {
+                    var v = confirm("Are you sure?");
+                    if (v == true) {
+                        alert("ok");
+                    }
+                    else {
+                        alert("cancel");
+                    }
+
+                }
+            </script>
+            <input type="button" value="click" onclick="msg()" />
+        </div>
+    </div>
+</body>
+
+</html>
