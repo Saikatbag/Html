@@ -1,0 +1,25 @@
+body{height: 100%;}
+.main{
+    background-color:rgb(235, 235, 235);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+     }
+.subDiv{
+    background-color: rgb(253, 253, 253);
+    width: 80%;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 10px;
+
+}
+.calculator{
+    background-color: blanchedalmond;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    border-width: 2px;
+
+}
