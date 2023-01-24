@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shraboni</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+        <style>
+            .dropbtn {
+              background-color: #04AA6D;
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #3e8e41;
+            }
+            
+            #myInput {
+              box-sizing: border-box;
+              background-image: url('searchicon.png');
+              background-position: 14px 12px;
+              background-repeat: no-repeat;
+              font-size: 16px;
+              padding: 14px 20px 12px 45px;
+              border: none;
+              border-bottom: 1px solid #ddd;
+            }
+            
+            #myInput:focus {outline: 3px solid #ddd;}
+            
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f6f6f6;
+              min-width: 230px;
+              overflow: auto;
+              border: 1px solid #ddd;
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            
+            .dropdown a:hover {background-color: #ddd;}
+            
+            .show {display: block;}
+            </style>
+
+</head>
+<script src="./Js/script.js"></script>
+<body>
+    <!-- Header ====================================================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                  
+                        <button onclick="myFunction()" class="dropbtn">MyCard</button>
+                       
+                       
+                     
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--body ====================================================================== -->
+    <div id="MyCard" class="container-md" >
+        <div id="MyItem" class="shadow-lg p-2 mt-3 mx-5 d-flex justify-content-around bg-white rounded" >
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">code</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody id="MyItemList">
+              
+                </tbody>
+              </table>  
+        </div>
+           
+        </div>
+
+    <div class="shadow-lg p-2 mt-3 mx-5 d-flex justify-content-around bg-white rounded">
+        <div class="row">
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (1).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mi Note 5</h5>
+                        <h6>Price <a id="a"> 10000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('a','mi note 5')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (2).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Mi note 7</h5>
+                        <h6>Price <a id="b"> 13000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('b','mi note 7 pro')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (9).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Mi Note 5 pro </h5>
+                        <h6>Price <a id="c"> 12000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('c','mi note 5 pro')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (10).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> Mi note 10 pro</h5>
+                        <h6>Price <a id="d"> 15000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('d','mi note 10 pro')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (5).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone 13</h5>
+                        <h6>Price <a id="e"> 90000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('e','iphone 13')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>  
+
+
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (6).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone 10 pro</h5>
+                        <h6>Price <a id="f"> 82000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('f','iphone 10 pro')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>  
+
+
+
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (7).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone 10 r</h5>
+                        <h6>Price <a id="g"> 50000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('g','iphone 10 r')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>  
+
+
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (8).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">mi note 12 pro</h5>
+                        <h6>Price <a id="h"> 17000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('h','mi note 12 pro')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>  
+
+
+            <div class="col mt-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="./img/ (3).jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone 13</h5>
+                        <h6>Price <a id="i"> 89000</a></h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a onclick="add_to_card('i','iphone 13')" class="btn btn-primary">Add to Card</a>
+                    </div>
+                </div>
+            </div>  
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <!-- Footer ====================================================================== -->
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="text-muted">© 2021 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>
